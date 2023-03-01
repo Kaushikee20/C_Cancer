@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Cervical Cancer Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="POST">
+    	<input type="text" name="Hormonal Contraceptives" placeholder="Hormonal Contraceptives" required="required" />
+      <input type="text" name="Hormonal Contraceptives (years)" placeholder="Hormonal Contraceptives (years)" required="required" />
+      <input type="text" name="Dx" placeholder="Dx" required="required" />
+      <input type="text" name="Dx:Cancer" placeholder="Dx:Cancer" required="required" />
+      <input type="text" name="IUD" placeholder="IUD" required="required" />
+      <input type="text" name="Dx:HPV" placeholder="Dx:HPV" required="required" />
+      <input type="text" name="IUD (years)" placeholder="IUD (years)" required="required" />
+      <input type="text" name="Smokes (packs/year)" placeholder="Smokes (packs/year)" required="required" />
+      <input type="text" name="STDs:vulvo-perineal condylomatosis" placeholder="STDs:vulvo-perineal condylomatosis" required="required" />
+      <input type="text" name="Dx:Cancer" placeholder="STDs:condylomatosis" required="STDs:condylomatosis" />
+
+      
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
